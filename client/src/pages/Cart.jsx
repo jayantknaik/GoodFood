@@ -11,6 +11,7 @@ const Cart = () => {
     const cartItems = useSelector(state => state.cart.items);
     const dispatch = useDispatch();
     const [subTotal, setSubTotal] = useState(0);
+    const API_URL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://goodfood-6hiw.onrender.com";
 
     useEffect(() => {
 
@@ -39,7 +40,7 @@ const Cart = () => {
     const makePayment = async () => {
 
         try {
-            const response = await axios.post(`http://localhost:3000/create-checkout-session`, cartItems);
+            const response = await axios.post(`${API_URL}/create-checkout-session`, cartItems);
             if (response && response.status === 200) {
                 window.open(`${response.data.url}`, "_blank");
             }
