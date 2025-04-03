@@ -8,20 +8,21 @@ import { IMG_URL } from "../utils/constants";
 import FoodNotFound from "../../assets/images/dummyFood.jpg";
 import RestaurantCategory from "../components/restaurant/RestaurantCategory";
 import '../scss/pages/menu.scss';
-import { useDispatch } from "react-redux";
-import { addFavRestaurant } from "../utils/redux/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavRestaurant, removeFavRestaurant } from "../utils/redux/cartSlice";
 
 const RestaurantMenu = () => {
 
-    let { resId } = useParams();
-    let resInfo = useFetchResInfo(resId);
-    let resCategories = useFetchResCategories(resId);
+    const { resId } = useParams();
+    const resInfo = useFetchResInfo(resId);
+    const resCategories = useFetchResCategories(resId);
+    const favRestaurants = useSelector(state => state.cart.favRestaurants);
     const { name, avgRating, totalRatingsString, cuisines, areaName, costForTwo, cloudinaryImageId } = resInfo;
     const [scrollUpArrow, setScrollUpArrow] = useState(false);
     const [isExpanded, setIsExpanded] = useState('cat-0');
-    const [isFav, setIsFav] = useState(false);
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const favResIndex = favRestaurants.findIndex(item=>item.id === resId);
 
     useEffect(() => {
 
@@ -51,9 +52,15 @@ const RestaurantMenu = () => {
         isExpanded === id ? setIsExpanded('') : setIsExpanded(id);
     }
 
-    const addFavRestaurantItem = () => {
-        dispatch(addFavRestaurant(resInfo));
-        setIsFav(true);
+    const toggleFavRestaurantItem = () => {
+
+        if(favResIndex !== -1) {
+            dispatch(removeFavRestaurant(resInfo));
+        }
+        else {
+            dispatch(addFavRestaurant(resInfo));
+        }
+
     }
 
     return resCategories == null ? <Shimmer /> :
@@ -70,7 +77,7 @@ const RestaurantMenu = () => {
                             <div className="menu__row">
                                 <div className="menu__name-cnt">
                                     <div className="menu__name" title={name}>{name}</div>
-                                    <div className={`menu__fav ${isFav?"active":""}`} onClick={() => addFavRestaurantItem()}>
+                                    <div className={`menu__fav ${favResIndex!==-1?"active":""}`} onClick={() => toggleFavRestaurantItem()}>
                                         <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-heart" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                             <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />

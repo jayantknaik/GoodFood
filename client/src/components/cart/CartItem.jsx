@@ -2,22 +2,27 @@ import { IMG_URL } from "../../utils/constants";
 import FoodNotFound from "../../../assets/images/dummyFood.jpg";
 import { Link } from "react-router-dom";
 import { removeItem, addItem, clearItem } from "../../utils/redux/cartSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-const CartItem = ({data}) => {
+const CartItem = ({ data }) => {
 
     const dispatch = useDispatch();
 
-    const {quantity} = data;
-    const {id, name, description, imageId, price, defaultPrice, resName, resId} = data?.value;
-    const pricePerItem = price ? Math.round(price/100) : Math.round(defaultPrice/100);
+    const { quantity } = data;
+    const { id, name, description, imageId, price, defaultPrice, resName, resId } = data?.value;
+    const pricePerItem = price ? Math.round(price / 100) : Math.round(defaultPrice / 100);
 
     const removeFoodItem = () => {
-        dispatch(removeItem(id));
+        if(quantity === 1) {
+            dispatch(clearItem(id));
+        }
+        else {
+            dispatch(removeItem(id));
+        }
     }
 
     const addFoodItem = () => {
-        dispatch(addItem({value: {"id": id}}));
+        dispatch(addItem({ value: { "id": id } }));
     }
 
     const clearFoodItem = () => {

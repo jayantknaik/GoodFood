@@ -38,15 +38,19 @@ const Cart = () => {
 
     const makePayment = async () => {
 
-        const response = await axios.post("http://localhost:3000/create-checkout-session", cartItems);
-        if (response && response.status === 200) {
-
-            window.open(`${response.data.url}`, "_blank");
-
+        try {
+            const response = await axios.post(`http://localhost:3000/create-checkout-session`, cartItems);
+            if (response && response.status === 200) {
+                window.open(`${response.data.url}`, "_blank");
+            }
         }
+        catch(error) {
+            console.error("Payment Error:", error);
+        }
+
     }
 
-    console.log(cartItems);
+    // console.log(cartItems);
 
     return (
         <>

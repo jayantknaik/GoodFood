@@ -10,26 +10,17 @@ const RestaurantMenuItem = ({data, addFoodItem, removeFoodItem, resName}) => {
 
     const {id, name, description, imageId, price, defaultPrice, itemAttribute} = data.card.info;
     const [quantity, setQuantity] = useState(0);
-    const cartItems = useState(useSelector(state => state.cart.items));
+    const cartItems = useSelector(state => state.cart.items);
     
     useEffect(() => {
-
-        let count = 0;
-
-        cartItems.map((item) => {
-            if (item?.value?.card?.info?.id === id) {
-                count++;
-            }
-        })
-
-        setQuantity(count);
-        
-    }, [])
-
+        const menuItemIndex = cartItems.findIndex(item => item.value.id === id);
+        setQuantity(menuItemIndex !==-1 ? cartItems[menuItemIndex].quantity: 0);
+    }, [cartItems])
+    
     const addItem = () => {
-
+        
         const {id, imageId, name, price, description} = data?.card?.info;
-
+        
         addFoodItem(
             {
                 resId, 
@@ -45,13 +36,10 @@ const RestaurantMenuItem = ({data, addFoodItem, removeFoodItem, resName}) => {
                 }
             }
         );
-
-        setQuantity(quantity + 1);
     }
 
     const removeItem = () => {
         removeFoodItem(id);
-        setQuantity(quantity - 1);
     }
 
     return (

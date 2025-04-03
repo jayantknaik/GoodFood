@@ -311,7 +311,7 @@
   overflow: hidden;
 }
 
-.res-card__veg:before {
+.res-card__veg .res-card:before {
   content: "";
   content: "PURE VEG";
   color: #fff;

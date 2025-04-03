@@ -31,7 +31,7 @@ const cartSlice = createSlice({
             if (index !== -1) {
                 state.items[index].quantity -= 1;
             }
-            
+
             state.totalItems -= 1;
 
         },
@@ -52,10 +52,14 @@ const cartSlice = createSlice({
         },
         addFavRestaurant: (state, action) => {
             state.favRestaurants.push(action.payload);
+        },
+        removeFavRestaurant: (state, action) => {
+            let index = state.favRestaurants.findIndex(item => item.id === action.payload);
+            state.favRestaurants.splice(index, 1);
         }
     }
 })
 
-export const {addItem, removeItem, clearCart, clearItem, addFavRestaurant} = cartSlice.actions;
+export const {addItem, removeItem, clearCart, clearItem, addFavRestaurant, removeFavRestaurant} = cartSlice.actions;
 
 export default cartSlice.reducer;
