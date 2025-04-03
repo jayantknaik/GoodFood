@@ -4,8 +4,8 @@
     "version": "1.0.0",
     "description": "React App",
     "scripts": {
-        "start": "NODE_ENV=development parcel index.html",
-        "build": "NODE_ENV=production parcel build index.html --public-url ./",
+        "start": "cross-env NODE_ENV=development parcel index.html",
+        "build": "cross-env NODE_ENV=production parcel build index.html --public-url ./",
         "test": "jest",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist"
@@ -26,6 +26,7 @@
         "@testing-library/react": "^15.0.7",
         "babel-jest": "^29.7.0",
         "buffer": "^6.0.3",
+        "cross-env": "^7.0.3",
         "crypto-browserify": "^3.12.1",
         "events": "^3.3.0",
         "gh-pages": "^6.1.1",
