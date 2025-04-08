@@ -86,4 +86,3 @@ Feel free to fork this repo and submit pull requests. All kinds of contributions
 ## 🗒️ License
 
 This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License.
-
