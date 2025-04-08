@@ -3,6 +3,8 @@ import FoodNotFound from "../../../assets/images/dummyFood.jpg";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { clearCart } from "../../utils/redux/cartSlice";
+import { useDispatch } from "react-redux";
 
 const RestaurantMenuItem = ({data, addFoodItem, removeFoodItem, resName}) => {
     
@@ -11,6 +13,7 @@ const RestaurantMenuItem = ({data, addFoodItem, removeFoodItem, resName}) => {
     const {id, name, description, imageId, price, defaultPrice, itemAttribute} = data.card.info;
     const [quantity, setQuantity] = useState(0);
     const cartItems = useSelector(state => state.cart.items);
+    const dispatch = useDispatch();
     
     useEffect(() => {
         const menuItemIndex = cartItems.findIndex(item => item.value.id === id);
@@ -19,23 +22,46 @@ const RestaurantMenuItem = ({data, addFoodItem, removeFoodItem, resName}) => {
     
     const addItem = () => {
         
+        const resIdExists = cartItems.findIndex(item => item.resId === resId);
         const {id, imageId, name, price, description} = data?.card?.info;
-        
-        addFoodItem(
-            {
-                resId, 
-                value: {
-                    "id": id,
-                    "imageId": imageId,
-                    "name": name,
-                    "price": price,
-                    "defaultPrice": defaultPrice,
-                    "description": description,
-                    "resName": resName,
-                    "resId": resId
+
+        if(cartItems.length === 0 || resIdExists !== -1) {
+            
+            addFoodItem(
+                {
+                    resId, 
+                    value: {
+                        "id": id,
+                        "imageId": imageId,
+                        "name": name,
+                        "price": price,
+                        "defaultPrice": defaultPrice,
+                        "description": description,
+                        "resName": resName,
+                        "resId": resId
+                    }
                 }
-            }
-        );
+            );
+        }
+        else {
+            dispatch(clearCart());
+            addFoodItem(
+                {
+                    resId, 
+                    value: {
+                        "id": id,
+                        "imageId": imageId,
+                        "name": name,
+                        "price": price,
+                        "defaultPrice": defaultPrice,
+                        "description": description,
+                        "resName": resName,
+                        "resId": resId
+                    }
+                }
+            );
+        }
+
     }
 
     const removeItem = () => {

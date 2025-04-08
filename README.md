@@ -1,4 +1,3 @@
-
 # GoodFood 🍔
 GoodFood is an innovative food delivery web application crafted with ❤️ using React. It aims to provide users with a seamless and delightful experience when ordering their favorite meals online.
 
@@ -32,19 +31,21 @@ GoodFood is an innovative food delivery web application crafted with ❤️ usin
 
 Follow these steps to run the project locally:
 
-Clone the Repository:
+**Tip:** For easier local testing of cross-origin requests, consider installing a browser extension like [Allow CORS](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigelgaf).
+
+* Clone the Repository:
 
 ```bash
   git clone https://github.com/jayantknaik/goodfood.git
 ```
 
-Navigate to the Project Directory:
+* Navigate to the Project Directory:
 
 ```bash
   cd goodfood
 ```
 
-Install Dependencies:
+* Install Dependencies:
 
 ```bash
   # Install server dependencies
@@ -57,12 +58,12 @@ Install Dependencies:
 
 ```
 
-Set Up Environment Variables:
+* Set Up Environment Variables:
 
 Create a .env file in the server directory and add the following:
 `STRIPE_SECRET_KEY=your_stripe_secret_key`
 
-Start the Development Servers:
+* Start the Development Servers:
 
 ```bash
   # Run frontend
@@ -72,7 +73,7 @@ Start the Development Servers:
   cd ../server
   npm run dev
 ```
-Access the Application:
+* Access the Application:
 
 Open your browser and navigate to `http://localhost:1234/goodfood` to explore GoodFood.
 

@@ -22,7 +22,7 @@ const RestaurantCard = ({ resData }) => {
         }
 
     }
-    console.log("resData: ", resData);
+    // console.log("resData: ", resData);
 
     return (
         <Link to={"/restaurants/" + id} className="res-card">
