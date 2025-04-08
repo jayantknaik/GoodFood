@@ -35359,7 +35359,7 @@ const RestaurantCard = ({ resData })=>{
         if (favResIndex !== -1) dispatch((0, _cartSlice.removeFavRestaurant)(resData.info));
         else dispatch((0, _cartSlice.addFavRestaurant)(resData.info));
     };
-    console.log("resData: ", resData);
+    // console.log("resData: ", resData);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
         to: "/restaurants/" + id,
         className: "res-card",
@@ -39855,13 +39855,13 @@ class ProfileClass extends (0, _react.Component) {
         this.setState({
             userInfo: json
         });
-        console.log('componentDidMount');
+    // console.log('componentDidMount');
     }
     componentDidUpdate() {
-        console.log('componentDidUpdate');
+    // console.log('componentDidUpdate');
     }
     componentWillUnmount() {
-        console.log('componentWillUnmount');
+    // console.log('componentWillUnmount');
     }
     render() {
         const { name, location, avatar_url, company } = this.state.userInfo;
@@ -40177,8 +40177,8 @@ const Cart = ()=>{
     const dispatch = (0, _reactRedux.useDispatch)();
     const [subTotal, setSubTotal] = (0, _react.useState)(0);
     const API_URL = "http://localhost:3000";
-    console.log("NODE_ENV: ", "development");
-    console.log("API_URL: ", API_URL);
+    // console.log("NODE_ENV: ", process.env.NODE_ENV);
+    // console.log("API_URL: ", API_URL);
     (0, _react.useEffect)(()=>{
         window.scrollTo({
             top: 0,
@@ -45650,7 +45650,7 @@ var _s = $RefreshSig$();
 const Favourites = ()=>{
     _s();
     const favRestaurants = (0, _reactRedux.useSelector)((state)=>state.cart.favRestaurants);
-    console.log(favRestaurants);
+    // console.log(favRestaurants);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: favRestaurants.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _emptyDefault.default), {
             title: "You haven't added any favorite restaurants yet! \u2B50 Start exploring and save your top picks for easy access later.",

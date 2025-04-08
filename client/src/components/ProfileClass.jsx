@@ -21,15 +21,15 @@ class ProfileClass extends Component {
         this.setState({
             userInfo: json,
         });
-        console.log('componentDidMount');
+        // console.log('componentDidMount');
     }
 
     componentDidUpdate () {
-        console.log('componentDidUpdate');
+        // console.log('componentDidUpdate');
     }
 
     componentWillUnmount () {
-        console.log('componentWillUnmount');
+        // console.log('componentWillUnmount');
     }
 
     render () {

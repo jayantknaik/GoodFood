@@ -6,7 +6,7 @@ import Empty from "../components/cart/Empty";
 const Favourites = () => {
 
     const favRestaurants = useSelector(state => state.cart.favRestaurants);
-    console.log(favRestaurants);
+    // console.log(favRestaurants);
 
     return (
         <>
