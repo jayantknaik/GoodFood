@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import EmptyCart from "../../../assets/images/emptyCart.png";
+const EmptyCart = new URL("../../../assets/images/emptyCart.png", import.meta.url);
 
 const Empty = ({title, cta, modifyClass}) => {
     return (
