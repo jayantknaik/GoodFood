@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
-app.get("/*", (req,res) => {
+app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 })
 
@@ -25,22 +25,21 @@ app.post("/create-checkout-session", async (req, res) => {
     const cartItems = req.body;
     const origin = req.headers.origin || "http://localhost:1234";
 
-    let session = await stripe.checkout.sessions.create({
+    const session = await stripe.checkout.sessions.create({
         mode: "payment",
         payment_method_types: ["card"],
         line_items: cartItems.map((item) => ({
             price_data: {
-                currency: "INR",
+                currency: "inr",
                 product_data: {
                     name: item.value.name,
-                    images: [`${IMG_URL}${item.value.imageId}`],
                 },
-                unit_amount: item.value.price ? item.value.price : item.value.defaultPrice,
+                unit_amount: item.value.price || item.value.defaultPrice,
             },
             quantity: item.quantity,
         })),
-        success_url: `${origin}/payment-success`,
-        cancel_url: `${origin}/payment-failed`,
+        success_url: `${origin}/goodfood/payment-success`,
+        cancel_url: `${origin}/goodfood/payment-failed`,
     });
 
     res.json(session);

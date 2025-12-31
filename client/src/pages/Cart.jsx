@@ -48,7 +48,7 @@ const Cart = () => {
                 window.open(`${response.data.url}`, "_blank");
             }
         }
-        catch(error) {
+        catch (error) {
             console.error("Payment Error:", error);
         }
 
@@ -60,9 +60,9 @@ const Cart = () => {
         <>
             {
                 cartItems.length === 0 ?
-                    <Empty 
-                        title={"Looks like you haven't added anything to your cart yet. 🛒 Start shopping to fill it up!"} 
-                        cta={"Get Food"} 
+                    <Empty
+                        title={"Looks like you haven't added anything to your cart yet. 🛒 Start shopping to fill it up!"}
+                        cta={"Get Food"}
                     /> :
                     <div className="cart">
                         <div className="cart__lt">

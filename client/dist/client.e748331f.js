@@ -35428,7 +35428,7 @@ $RefreshReg$(_c, "RestaurantCard");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","../../utils/constants":"dIVBf","react-router-dom":"61z4w","../../../assets/images/dummyFood.jpg":"fMHCV","react-redux":"hbNxT","../../utils/redux/cartSlice":"drn6I","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dIVBf":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","../../utils/constants":"dIVBf","react-router-dom":"61z4w","react-redux":"hbNxT","../../utils/redux/cartSlice":"drn6I","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","../../../assets/images/dummyFood.jpg":"fMHCV"}],"dIVBf":[function(require,module,exports,__globalThis) {
 // Base
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -35439,7 +35439,7 @@ const IMG_URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_
 const RESTAURANTS_URL = 'https://namastedev.com/api/v1/listRestaurants';
 const MENU_URL = 'https://namastedev.com/api/v1/listRestaurantMenu/';
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"fMHCV":[function() {},{}],"drn6I":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"drn6I":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "addItem", ()=>addItem);
@@ -39416,7 +39416,7 @@ function createThunkMiddleware(extraArgument) {
 var thunk = createThunkMiddleware();
 var withExtraArgument = createThunkMiddleware;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"hJyAf":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"fMHCV":[function() {},{}],"hJyAf":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$ca0f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$ca0f.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -40410,7 +40410,7 @@ $RefreshReg$(_c, "CartItem");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","../../utils/constants":"dIVBf","../../../assets/images/dummyFood.jpg":"fMHCV","react-router-dom":"61z4w","../../utils/redux/cartSlice":"drn6I","react-redux":"hbNxT","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"fMHCV":[function() {},{}],"5TOKW":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","../../utils/constants":"dIVBf","react-router-dom":"61z4w","../../utils/redux/cartSlice":"drn6I","react-redux":"hbNxT","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","../../../assets/images/dummyFood.jpg":"fMHCV"}],"fMHCV":[function() {},{}],"5TOKW":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$5545 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$5545.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -40471,7 +40471,7 @@ $RefreshReg$(_c, "Empty");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react-router-dom":"61z4w","../../../assets/images/emptyCart.png":"7QNG3","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"7QNG3":[function() {},{}],"hNGjm":[function() {},{}],"kooH4":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react-router-dom":"61z4w","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","../../../assets/images/emptyCart.png":"7QNG3"}],"7QNG3":[function() {},{}],"hNGjm":[function() {},{}],"kooH4":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _axiosJsDefault.default));
@@ -45442,7 +45442,7 @@ $RefreshReg$(_c, "PaymentSuccess");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","../scss/pages/payment.scss":"dj1UJ","../../assets/images/payment-success.svg":"5r0b0","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dj1UJ":[function() {},{}],"5r0b0":[function() {},{}],"71Yzt":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","../scss/pages/payment.scss":"dj1UJ","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","../../assets/images/payment-success.svg":"5r0b0"}],"dj1UJ":[function() {},{}],"5r0b0":[function() {},{}],"71Yzt":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$383a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$383a.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -45510,7 +45510,7 @@ $RefreshReg$(_c, "PaymentFailed");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","../scss/pages/payment.scss":"dj1UJ","../../assets/images/payment-failed.svg":"cNrQz","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dj1UJ":[function() {},{}],"cNrQz":[function() {},{}],"5RPbU":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","../scss/pages/payment.scss":"dj1UJ","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","../../assets/images/payment-failed.svg":"cNrQz"}],"dj1UJ":[function() {},{}],"cNrQz":[function() {},{}],"5RPbU":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$c58f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$c58f.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
