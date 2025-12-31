@@ -1,5 +1,5 @@
 import { IMG_URL } from "../../utils/constants";
-import FoodNotFound from "../../../assets/images/dummyFood.jpg";
+const FoodNotFound = new URL("../../../assets/images/dummyFood.jpg", import.meta.url);
 import { Link } from "react-router-dom";
 import { removeItem, addItem, clearItem } from "../../utils/redux/cartSlice";
 import { useDispatch, useSelector } from "react-redux";

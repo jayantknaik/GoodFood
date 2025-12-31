@@ -1,5 +1,5 @@
 import "../scss/pages/payment.scss";
-import PaymentFailedIcon from "../../assets/images/payment-failed.svg";
+const PaymentFailedIcon = new URL("../../assets/images/payment-failed.svg", import.meta.url);
 
 const PaymentFailed = () => {
     return (

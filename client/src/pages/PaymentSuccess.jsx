@@ -1,5 +1,5 @@
 import "../scss/pages/payment.scss";
-import PaymentSuccessIcon from "../../assets/images/payment-success.svg";
+const PaymentSuccessIcon = new URL("../../assets/images/payment-success.svg", import.meta.url);
 
 const PaymentSuccess = () => {
     return (

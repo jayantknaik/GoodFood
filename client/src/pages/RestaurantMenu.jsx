@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import useFetchResInfo from '../utils/hooks/useFetchResInfo';
 import useFetchResCategories from "../utils/hooks/useFetchResCategories";
 import { IMG_URL } from "../utils/constants";
-import FoodNotFound from "../../assets/images/dummyFood.jpg";
+const FoodNotFound = new URL("../../assets/images/dummyFood.jpg", import.meta.url);
 import RestaurantCategory from "../components/restaurant/RestaurantCategory";
 import '../scss/pages/menu.scss';
 import { useDispatch, useSelector } from "react-redux";

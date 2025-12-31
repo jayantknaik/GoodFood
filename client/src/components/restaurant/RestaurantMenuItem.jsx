@@ -1,5 +1,5 @@
 import { IMG_URL } from "../../utils/constants";
-import FoodNotFound from "../../../assets/images/dummyFood.jpg";
+const FoodNotFound = new URL("../../../assets/images/dummyFood.jpg", import.meta.url);
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";

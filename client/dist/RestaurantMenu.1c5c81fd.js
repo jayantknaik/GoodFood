@@ -177,7 +177,7 @@
 
   // Only insert newRequire.load when it is actually used.
   // The code in this file is linted against ES5, so dynamic import is not allowed.
-  // INSERT_LOAD_HERE
+  function $parcel$resolve(url) {  url = importMap[url] || url;  return import.meta.resolve(distDir + url);}newRequire.resolve = $parcel$resolve;
 
   Object.defineProperty(newRequire, 'root', {
     get: function () {
@@ -735,14 +735,13 @@ var _useFetchResInfoDefault = parcelHelpers.interopDefault(_useFetchResInfo);
 var _useFetchResCategories = require("../utils/hooks/useFetchResCategories");
 var _useFetchResCategoriesDefault = parcelHelpers.interopDefault(_useFetchResCategories);
 var _constants = require("../utils/constants");
-var _dummyFoodJpg = require("../../assets/images/dummyFood.jpg");
-var _dummyFoodJpgDefault = parcelHelpers.interopDefault(_dummyFoodJpg);
 var _restaurantCategory = require("../components/restaurant/RestaurantCategory");
 var _restaurantCategoryDefault = parcelHelpers.interopDefault(_restaurantCategory);
 var _menuScss = require("../scss/pages/menu.scss");
 var _reactRedux = require("react-redux");
 var _cartSlice = require("../utils/redux/cartSlice");
 var _s = $RefreshSig$();
+const FoodNotFound = new URL(require("b566e329de33c6fb"));
 const RestaurantMenu = ()=>{
     _s();
     const { resId } = (0, _reactRouterDom.useParams)();
@@ -802,7 +801,7 @@ const RestaurantMenu = ()=>{
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                                 className: "menu__img",
                                 src: (0, _constants.IMG_URL) + cloudinaryImageId,
-                                onError: (e)=>e.target.src = (0, _dummyFoodJpgDefault.default),
+                                onError: (e)=>e.target.src = FoodNotFound,
                                 alt: ""
                             }, void 0, false, {
                                 fileName: "src/pages/RestaurantMenu.jsx",
@@ -1039,7 +1038,7 @@ $RefreshReg$(_c, "RestaurantMenu");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","../components/Shimmer":"hJyAf","react-router-dom":"61z4w","../components/Footer":"lU1xT","../utils/hooks/useFetchResInfo":"iw7HN","../utils/hooks/useFetchResCategories":"28iSh","../utils/constants":"dIVBf","../../assets/images/dummyFood.jpg":"fMHCV","../components/restaurant/RestaurantCategory":"79pvu","../scss/pages/menu.scss":"aw1Mh","react-redux":"hbNxT","../utils/redux/cartSlice":"drn6I","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"iw7HN":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","../components/Shimmer":"hJyAf","react-router-dom":"61z4w","../components/Footer":"lU1xT","../utils/hooks/useFetchResInfo":"iw7HN","../utils/hooks/useFetchResCategories":"28iSh","../utils/constants":"dIVBf","../components/restaurant/RestaurantCategory":"79pvu","../scss/pages/menu.scss":"aw1Mh","react-redux":"hbNxT","../utils/redux/cartSlice":"drn6I","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","b566e329de33c6fb":"86pQ2"}],"iw7HN":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$d783 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$d783.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -1107,7 +1106,7 @@ exports.default = useFetchResCategories;
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"jMk1U","../constants":"dIVBf","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"fMHCV":[function() {},{}],"79pvu":[function(require,module,exports,__globalThis) {
+},{"react":"jMk1U","../constants":"dIVBf","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"79pvu":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$5098 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$5098.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -1217,13 +1216,12 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _constants = require("../../utils/constants");
-var _dummyFoodJpg = require("../../../assets/images/dummyFood.jpg");
-var _dummyFoodJpgDefault = parcelHelpers.interopDefault(_dummyFoodJpg);
 var _react = require("react");
 var _reactRedux = require("react-redux");
 var _reactRouterDom = require("react-router-dom");
 var _cartSlice = require("../../utils/redux/cartSlice");
 var _s = $RefreshSig$();
+const FoodNotFound = new URL(require("4e643c2755642cd3"));
 const RestaurantMenuItem = ({ data, addFoodItem, removeFoodItem, resName })=>{
     _s();
     const { resId } = (0, _reactRouterDom.useParams)();
@@ -1333,7 +1331,7 @@ const RestaurantMenuItem = ({ data, addFoodItem, removeFoodItem, resName })=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                         className: "menu__item__image",
                         src: (0, _constants.IMG_URL) + imageId,
-                        onError: (e)=>e.target.src = (0, _dummyFoodJpgDefault.default),
+                        onError: (e)=>e.target.src = FoodNotFound,
                         alt: "food-image"
                     }, void 0, false, {
                         fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
@@ -1408,6 +1406,9 @@ $RefreshReg$(_c, "RestaurantMenuItem");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","../../utils/constants":"dIVBf","../../../assets/images/dummyFood.jpg":"fMHCV","react":"jMk1U","react-redux":"hbNxT","react-router-dom":"61z4w","../../utils/redux/cartSlice":"drn6I","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"fMHCV":[function() {},{}],"aw1Mh":[function() {},{}]},["hSmqb"], null, "parcelRequirefc19", {})
+},{"react/jsx-dev-runtime":"dVPUn","../../utils/constants":"dIVBf","react":"jMk1U","react-redux":"hbNxT","react-router-dom":"61z4w","../../utils/redux/cartSlice":"drn6I","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","4e643c2755642cd3":"86pQ2"}],"86pQ2":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("dummyFood.654ee0ac.jpg") + "?" + Date.now();
+
+},{}],"aw1Mh":[function() {},{}]},["hSmqb"], null, "parcelRequirefc19", {}, "./", "/")
 
 //# sourceMappingURL=RestaurantMenu.1c5c81fd.js.map
