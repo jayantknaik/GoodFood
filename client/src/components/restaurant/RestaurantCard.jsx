@@ -9,12 +9,12 @@ const RestaurantCard = ({ resData }) => {
 
     const { id, name, avgRating, cuisines, costForTwo, cloudinaryImageId, sla } = resData.info ? resData.info : resData;
     const favRestaurants = useSelector(state => state.cart.favRestaurants);
-    const favResIndex = favRestaurants.findIndex(item=>item.id === id);
+    const favResIndex = favRestaurants.findIndex(item => item.id === id);
     const dispatch = useDispatch();
     const toggleFavRestaurantItem = (e) => {
         e.stopPropagation();
         e.preventDefault();
-        if(favResIndex !== -1) {
+        if (favResIndex !== -1) {
             dispatch(removeFavRestaurant(resData.info));
         }
         else {
@@ -22,7 +22,19 @@ const RestaurantCard = ({ resData }) => {
         }
 
     }
-    // console.log("resData: ", resData);
+
+    console.log("FoodNotFound: ", FoodNotFound);
+
+    const getImageSrc = (img) => {
+        if (!img) return "";
+        if (typeof img === "string") return img;
+        if (img.src) return img.src;
+        return "";
+    };
+    const fallbackImg = getImageSrc(FoodNotFound);
+    const imageSrc = cloudinaryImageId
+        ? IMG_URL + cloudinaryImageId
+        : fallbackImg;
 
     return (
         <Link to={"/restaurants/" + id} className="res-card">
@@ -33,7 +45,15 @@ const RestaurantCard = ({ resData }) => {
                         <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
                     </svg>
                 </div>
-                <img className="res-card__img" src={IMG_URL + cloudinaryImageId} onError={(e) => e.target.src = FoodNotFound} alt="res-image" />
+                <img className="res-card__img"
+                    src={imageSrc}
+                    onError={(e) => {
+                        const img = e.currentTarget;
+                        if (img.src === fallbackImg) return;
+                        img.src = fallbackImg;
+                    }}
+                    alt="res-image"
+                />
             </div>
             <div className="res-card__info">
                 <div className="res-card__row">

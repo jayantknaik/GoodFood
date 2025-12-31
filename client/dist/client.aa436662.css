@@ -167,10 +167,6 @@
   line-height: 34px;
 }
 
-.home__container {
-  padding: 0 0 32px;
-}
-
 .home__container#offers {
   margin: -40px 0 0;
   overflow: hidden;
@@ -180,6 +176,10 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
   display: grid;
+}
+
+.home__container {
+  padding: 0 0 32px;
 }
 
 .home__swiper {
@@ -838,4 +838,4 @@
   background-color: #c31f25;
   border: 1px solid #c31f25;
 }
-/*# sourceMappingURL=index.c41b5a0e.css.map */
+/*# sourceMappingURL=client.aa436662.css.map */

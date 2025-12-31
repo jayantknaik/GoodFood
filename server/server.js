@@ -23,6 +23,7 @@ app.get("/*", (req,res) => {
 app.post("/create-checkout-session", async (req, res) => {
 
     const cartItems = req.body;
+    const origin = req.headers.origin || "http://localhost:1234";
 
     let session = await stripe.checkout.sessions.create({
         mode: "payment",
@@ -38,8 +39,8 @@ app.post("/create-checkout-session", async (req, res) => {
             },
             quantity: item.quantity,
         })),
-        success_url: "http://localhost:1234/goodfood/payment-success",
-        cancel_url: "http://localhost:1234/goodfood/payment-failed",
+        success_url: `${origin}/payment-success`,
+        cancel_url: `${origin}/payment-failed`,
     });
 
     res.json(session);

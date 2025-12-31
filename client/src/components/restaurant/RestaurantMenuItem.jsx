@@ -10,7 +10,7 @@ const RestaurantMenuItem = ({data, addFoodItem, removeFoodItem, resName}) => {
     
     const {resId} = useParams();
 
-    const {id, name, description, imageId, price, defaultPrice, itemAttribute} = data.card.info;
+    const {id, name, description, imageId, price, defaultPrice} = data.card.info;
     const [quantity, setQuantity] = useState(0);
     const cartItems = useSelector(state => state.cart.items);
     const dispatch = useDispatch();
@@ -73,7 +73,6 @@ const RestaurantMenuItem = ({data, addFoodItem, removeFoodItem, resName}) => {
             <div className="menu__item__info">
                 <div className="menu__item__row">
                     <div className="menu__item__name">{name}</div>
-                    {itemAttribute.vegClassifier === 'VEG' ? <div className="menu__item__veg"></div> : <div className="menu__item__nonVeg"></div>}
                 </div>
                 <div className="menu__item__cost"><span className="rupees-arial">&#8377;</span>{price ? Math.round(price/100) : Math.round(defaultPrice/100)}</div>
                 <div className="menu__item__desc">{description}</div>

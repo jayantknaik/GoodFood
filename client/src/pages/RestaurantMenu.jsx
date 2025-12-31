@@ -94,7 +94,7 @@ const RestaurantMenu = () => {
 
                         <div className="menu__info-container second">
                             <div className="menu__area">{areaName}</div>
-                            <div className="menu__cost"><span className="rupees-arial">&#8377;</span><span className="font-inter">{Math.round(costForTwo / 100)}</span> for two</div>
+                            <div className="menu__cost"><span className="font-inter">{costForTwo}</span></div>
                         </div>
 
                         <div className="menu__info-container third">
