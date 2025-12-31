@@ -33,6 +33,7 @@ app.post("/create-checkout-session", async (req, res) => {
                 currency: "inr",
                 product_data: {
                     name: item.value.name,
+                    images: [`${IMG_URL}${item.value.imageId}`],
                 },
                 unit_amount: item.value.price || item.value.defaultPrice,
             },
