@@ -241,3 +241,34 @@
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+    .home {
+        padding: 0 16px;
+        &__head {
+            font-size: 32px;
+            &-container {
+                height: 140px;
+                background-size: auto;
+            }
+        }
+        &__title {
+            font-size: 20px;
+        }
+        &__container {
+            &#topRes {
+                grid-auto-flow: row;
+                grid-template-columns: none;
+            }
+        }
+    }
+
+    .res {
+        &-card {
+            box-shadow: 0 4px 2.5rem rgba(0, 0, 0, .08);
+            &__veg {
+                box-shadow: 0 4px 2.5rem rgba(0, 0, 0, .08);
+            }
+        }
+    }
+}

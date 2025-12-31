@@ -1,10 +1,10 @@
 import { useOutletContext } from 'react-router-dom';
 import RestaurantCard, {isVeg} from '../components/restaurant/RestaurantCard';
 import Shimmer from '../components/Shimmer';
-import { IMG_URL } from '../utils/constants';
-import { Link } from 'react-router-dom';
 import '../scss/pages/home.scss';
 import Footer from '../components/Footer';
+import { isMobile } from '../utils/hooks/isMobile';
+import Search from '../components/Search';
 
 const Home = () => {
     
@@ -14,6 +14,10 @@ const Home = () => {
     return resList.length === undefined ? <Shimmer/> : (
         <>
             <div className="home">
+                {
+                    isMobile() &&
+                    <Search resList={resList} />
+                }
                 <div className="home__head-container">
                     <div className="home__head">Order Food At Your Doorstep Now!</div>
                 </div>

@@ -432,3 +432,28 @@
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+    .menu {
+        gap: 16px;
+        grid-template-columns: none;
+        padding: 0 16px;
+        &__imgCnt {
+            position: relative;
+            top: unset;
+        }
+        &__img {
+            width: 100%;
+            height: 200px;
+        }
+        &__row {
+            flex-direction: column;
+            align-items: start;
+            gap: 4px;
+            padding: 0 0 8px;
+        }
+        &__scrollUp {
+            right: 16px;
+        }
+    }
+}

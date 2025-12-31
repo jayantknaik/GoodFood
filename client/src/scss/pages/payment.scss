@@ -26,3 +26,12 @@
         color: $gray-500;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .payment {
+        padding: 0 16px;
+        &__message {
+            text-align: center;
+        }
+    }
+}

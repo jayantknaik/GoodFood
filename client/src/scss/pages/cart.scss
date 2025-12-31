@@ -285,3 +285,36 @@
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+    .cart {
+        flex-direction: column;
+        padding: 0 16px;
+        &__empty {
+            padding: 0 16px;
+            &__title {
+                text-align: center;
+            }
+        }
+        &__details {
+            overflow: auto;
+            scrollbar-width: none;
+        }
+        &__list {
+            overflow: unset;
+        }
+        &__lt {
+            &__top {
+                padding: 16px 0;
+            }
+        }
+        &__rt {
+            width: 100%;
+        }
+        &__item {
+            &__val {
+                white-space: nowrap;
+            }
+        }
+    }
+}
