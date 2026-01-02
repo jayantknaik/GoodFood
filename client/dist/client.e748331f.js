@@ -39527,7 +39527,7 @@ const Footer = ({ type })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         "data-testid": "footer",
         className: type == 'fixed' ? "footer fixed" : "footer",
-        children: "All Rights Reserved. \xa9 2024 goodfood | Made with \u2764\uFE0F in India"
+        children: "All Rights Reserved. \xa9 2026 goodfood | Made with \u2764\uFE0F in India"
     }, void 0, false, {
         fileName: "src/components/Footer.jsx",
         lineNumber: 3,
@@ -39965,7 +39965,11 @@ const Cart = ()=>{
     };
     const makePayment = async ()=>{
         try {
-            const response = await (0, _axiosDefault.default).post(`${API_URL}/create-checkout-session`, cartItems);
+            const response = await (0, _axiosDefault.default).post(`${API_URL}/create-checkout-session`, cartItems, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
             if (response && response.status === 200) window.open(`${response.data.url}`, "_blank");
         } catch (error) {
             console.error("Payment Error:", error);
