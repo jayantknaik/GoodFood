@@ -95,6 +95,10 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 @media screen and (width <= 767px) {
+  .header {
+    padding: 20px 0;
+  }
+
   .header-wrapper {
     width: calc(100% - 32px);
     padding: 16px 32px;
