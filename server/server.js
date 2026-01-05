@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
 
@@ -11,12 +12,21 @@ const IMG_URL =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 const CLIENT_URL = process.env.CLIENT_URL;
 
+/* ✅ CORS — ONLY ONCE */
+app.use(cors({
+    origin: [
+        "http://localhost:1234",
+        "https://goodfood-6hiw.onrender.com"
+    ],
+    methods: ["GET", "POST"],
+}));
+
 app.use(express.json());
 
-// 🔥 Serve React build
+/* ✅ Serve React build (only if same server) */
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
-// 🔥 API ROUTES
+/* 🔥 API ROUTE */
 app.post("/create-checkout-session", async (req, res) => {
     try {
         const cartItems = req.body;
@@ -49,11 +59,11 @@ app.post("/create-checkout-session", async (req, res) => {
     }
 });
 
-// 🔥 React Router fallback (MUST be last)
+/* React Router fallback */
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
 app.listen(port, () => {
-    console.log(`🚀 Server running on http://localhost:${port}`);
+    console.log(`🚀 Server running on port: ${port}`);
 });
