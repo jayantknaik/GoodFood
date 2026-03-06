@@ -839,6 +839,10 @@
   display: flex;
 }
 
+.payment__img {
+  object-fit: cover;
+}
+
 .payment__title {
   color: #303030;
   padding: 0 0 8px;
@@ -857,8 +861,40 @@
 
 .payment__message {
   color: #909090;
+  padding: 0 0 16px;
   font-size: 16px;
   line-height: 24px;
+}
+
+.payment__cta {
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  background-color: #d8232a;
+  border: 1px solid #d8232a;
+  border-radius: 50px;
+  min-width: 124px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 40px;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.payment__cta:hover {
+  background-color: #c31f25;
+  border: 1px solid #c31f25;
+}
+
+.payment__cta.logout {
+  background-color: #f3f3f3;
+  border: 1px solid #f3f3f3;
+}
+
+.payment__cta.logout:hover {
+  background-color: #e8e8e8;
+  border: 1px solid #e8e8e8;
 }
 
 @media screen and (width <= 767px) {

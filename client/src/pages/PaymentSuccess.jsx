@@ -1,4 +1,5 @@
 import "../scss/pages/payment.scss";
+import { Link } from "react-router-dom";
 const PaymentSuccessIcon = new URL("../../assets/images/payment-success.svg", import.meta.url);
 
 const PaymentSuccess = () => {
@@ -9,6 +10,7 @@ const PaymentSuccess = () => {
             </div>
             <div className="payment__title payment__title--success">Payment Success</div>
             <div className="payment__message">Your payment was successful.</div>
+            <Link to={'/'} className="payment__cta">Get Food</Link>
         </div>
     )
 }

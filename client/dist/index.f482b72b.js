@@ -39654,7 +39654,7 @@ const Footer = ({ type })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         "data-testid": "footer",
         className: type == 'fixed' ? "footer fixed" : "footer",
-        children: "All Rights Reserved. \xa9 2024 goodfood | Made with \u2764\uFE0F in India"
+        children: "All Rights Reserved. \xa9 2026 goodfood | Made with \u2764\uFE0F in India"
     }, void 0, false, {
         fileName: "src/components/Footer.jsx",
         lineNumber: 3,
@@ -45423,6 +45423,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _paymentScss = require("../scss/pages/payment.scss");
+var _reactRouterDom = require("react-router-dom");
 const PaymentSuccessIcon = new URL(require("25009bf8738b8eae"));
 const PaymentSuccess = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -45437,12 +45438,12 @@ const PaymentSuccess = ()=>{
                     height: 400
                 }, void 0, false, {
                     fileName: "src/pages/PaymentSuccess.jsx",
-                    lineNumber: 8,
+                    lineNumber: 9,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/PaymentSuccess.jsx",
-                lineNumber: 7,
+                lineNumber: 8,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -45450,7 +45451,7 @@ const PaymentSuccess = ()=>{
                 children: "Payment Success"
             }, void 0, false, {
                 fileName: "src/pages/PaymentSuccess.jsx",
-                lineNumber: 10,
+                lineNumber: 11,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -45458,13 +45459,22 @@ const PaymentSuccess = ()=>{
                 children: "Your payment was successful."
             }, void 0, false, {
                 fileName: "src/pages/PaymentSuccess.jsx",
-                lineNumber: 11,
+                lineNumber: 12,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                to: '/',
+                className: "payment__cta",
+                children: "Get Food"
+            }, void 0, false, {
+                fileName: "src/pages/PaymentSuccess.jsx",
+                lineNumber: 13,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/PaymentSuccess.jsx",
-        lineNumber: 6,
+        lineNumber: 7,
         columnNumber: 9
     }, undefined);
 };
@@ -45478,7 +45488,7 @@ $RefreshReg$(_c, "PaymentSuccess");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../scss/pages/payment.scss":"dj1UJ","25009bf8738b8eae":"3ve8j","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dj1UJ":[function() {},{}],"3ve8j":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","../scss/pages/payment.scss":"dj1UJ","25009bf8738b8eae":"3ve8j","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"dj1UJ":[function() {},{}],"3ve8j":[function(require,module,exports,__globalThis) {
 module.exports = require("8bca0f786e23a61").getBundleURL('kFIdX') + "payment-success.bdd50cae.svg" + "?" + Date.now();
 
 },{"8bca0f786e23a61":"lgJ39"}],"ii8NJ":[function(require,module,exports,__globalThis) {
@@ -45492,26 +45502,28 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _paymentScss = require("../scss/pages/payment.scss");
+var _reactRouterDom = require("react-router-dom");
 const PaymentFailedIcon = new URL(require("c28c4cf6d391d516"));
 const PaymentFailed = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "payment",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "payment__img",
+                className: "payment__img-wrp",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                     src: PaymentFailedIcon,
                     alt: "payment-failed-icon",
-                    width: 400,
-                    height: 400
+                    width: 380,
+                    height: 300,
+                    className: "payment__img"
                 }, void 0, false, {
                     fileName: "src/pages/PaymentFailed.jsx",
-                    lineNumber: 8,
+                    lineNumber: 9,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/PaymentFailed.jsx",
-                lineNumber: 7,
+                lineNumber: 8,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -45519,7 +45531,7 @@ const PaymentFailed = ()=>{
                 children: "Payment Failed"
             }, void 0, false, {
                 fileName: "src/pages/PaymentFailed.jsx",
-                lineNumber: 10,
+                lineNumber: 11,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -45527,13 +45539,22 @@ const PaymentFailed = ()=>{
                 children: "Your payment was unsuccessful. Please try again."
             }, void 0, false, {
                 fileName: "src/pages/PaymentFailed.jsx",
-                lineNumber: 11,
+                lineNumber: 12,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                to: '/',
+                className: "payment__cta",
+                children: "Get Food"
+            }, void 0, false, {
+                fileName: "src/pages/PaymentFailed.jsx",
+                lineNumber: 13,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/PaymentFailed.jsx",
-        lineNumber: 6,
+        lineNumber: 7,
         columnNumber: 9
     }, undefined);
 };
@@ -45547,7 +45568,7 @@ $RefreshReg$(_c, "PaymentFailed");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../scss/pages/payment.scss":"dj1UJ","c28c4cf6d391d516":"5XPyZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dj1UJ":[function() {},{}],"5XPyZ":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","../scss/pages/payment.scss":"dj1UJ","c28c4cf6d391d516":"5XPyZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"dj1UJ":[function() {},{}],"5XPyZ":[function(require,module,exports,__globalThis) {
 module.exports = require("f1905c2721fac9f7").getBundleURL('kFIdX') + "payment-failed.2c09e0df.svg" + "?" + Date.now();
 
 },{"f1905c2721fac9f7":"lgJ39"}],"c7aKt":[function(require,module,exports,__globalThis) {
