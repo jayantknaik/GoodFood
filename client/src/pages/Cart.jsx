@@ -43,7 +43,7 @@ const Cart = () => {
     const makePayment = async () => {
 
         try {
-            const response = await axios.post(`${API_URL}/create-checkout-session`, cartItems);
+            const response = await axios.post("/create-checkout-session", cartItems);
             if (response && response.status === 200) {
                 window.open(`${response.data.url}`, "_blank");
             }
