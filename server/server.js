@@ -3,9 +3,14 @@ const cors = require("cors");
 const path = require("path");
 require('dotenv').config();
 
+if (!process.env.STRIPE_SECRET_KEY) {
+    console.error('STRIPE_SECRET_KEY is not set');
+    process.exit(1);
+}
+
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -14,11 +19,11 @@ const IMG_URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "../client/dist")));
+// app.use(express.static(path.join(__dirname, "../client/dist")));
 
-app.get("/*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/dist/index.html"));
-})
+// app.get("/*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+// })
 
 app.post("/create-checkout-session", async (req, res) => {
 
