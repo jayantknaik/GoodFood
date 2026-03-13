@@ -26,30 +26,40 @@ app.use(express.json());
 // })
 
 app.post("/create-checkout-session", async (req, res) => {
+    try {
+        const cartItems = req.body;
+        const origin = req.headers.origin || "http://localhost:1234";
 
-    const cartItems = req.body;
-    const origin = req.headers.origin || "http://localhost:1234";
-
-    const session = await stripe.checkout.sessions.create({
-        mode: "payment",
-        payment_method_types: ["card"],
-        line_items: cartItems.map((item) => ({
-            price_data: {
-                currency: "inr",
-                product_data: {
-                    name: item.value.name,
-                    images: [`${IMG_URL}${item.value.imageId}`],
+        const session = await stripe.checkout.sessions.create({
+            mode: "payment",
+            payment_method_types: ["card"],
+            line_items: cartItems.map((item) => ({
+                price_data: {
+                    currency: "inr",
+                    product_data: {
+                        name: item.value.name,
+                        images: [`${IMG_URL}${item.value.imageId}`],
+                    },
+                    unit_amount: item.value.price || item.value.defaultPrice,
                 },
-                unit_amount: item.value.price || item.value.defaultPrice,
-            },
-            quantity: item.quantity,
-        })),
-        success_url: `${origin}/goodfood/payment-success`,
-        cancel_url: `${origin}/goodfood/payment-failed`,
-    });
+                quantity: item.quantity,
+            })),
+            success_url: `${origin}/goodfood/payment-success`,
+            cancel_url: `${origin}/goodfood/payment-failed`,
+        });
 
-    res.json(session);
-})
+        res.json(session);
+
+    } catch (error) {
+        console.error("Stripe error:", error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+if (!process.env.STRIPE_SECRET_KEY) {
+    console.error('STRIPE_SECRET_KEY is not set');
+    process.exit(1);
+}
 
 app.listen(port, () => {
     console.log(`🚀 Server running on port: ${port}`);
