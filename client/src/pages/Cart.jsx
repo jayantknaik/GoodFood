@@ -11,7 +11,7 @@ const Cart = () => {
     const cartItems = useSelector(state => state.cart.items);
     const dispatch = useDispatch();
     const [subTotal, setSubTotal] = useState(0);
-    const API_URL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://goodfood-6hiw.onrender.com";
+    const API_URL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://goodfoodserver.onrender.com/";
 
     console.log("NODE_ENV: ", process.env.NODE_ENV);
     console.log("API_URL: ", API_URL);
