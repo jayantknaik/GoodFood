@@ -45432,8 +45432,9 @@ const PaymentSuccess = ()=>{
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                     src: PaymentSuccessIcon,
                     alt: "payment-success-icon",
-                    width: 400,
-                    height: 400
+                    width: 380,
+                    height: 300,
+                    className: "payment__img"
                 }, void 0, false, {
                     fileName: "src/pages/PaymentSuccess.jsx",
                     lineNumber: 9,
