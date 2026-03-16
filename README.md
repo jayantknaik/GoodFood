@@ -1,7 +1,7 @@
 # GoodFood 🍔
 GoodFood is an innovative food delivery web application crafted with ❤️ using React. It aims to provide users with a seamless and delightful experience when ordering their favorite meals online.
 
-🌐 Live Demo: https://goodfood-6hiw.onrender.com/goodfood
+🌐 Live Demo: https://goodfood-zorm.onrender.com
 
 ## 🚀 Features
 
