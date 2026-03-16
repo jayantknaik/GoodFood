@@ -3125,9 +3125,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
             columnNumber: 23
         }, undefined)
     }
-], {
-    basename: "/goodfood"
-});
+]);
 const root = (0, _clientDefault.default).createRoot(document.getElementById('root'));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterProvider), {
     router: appRouter
@@ -40101,8 +40099,8 @@ const Cart = ()=>{
     const dispatch = (0, _reactRedux.useDispatch)();
     const [subTotal, setSubTotal] = (0, _react.useState)(0);
     const API_URL = "http://localhost:3000";
-    // console.log("NODE_ENV: ", process.env.NODE_ENV);
-    // console.log("API_URL: ", API_URL);
+    console.log("NODE_ENV: ", "development");
+    console.log("API_URL: ", API_URL);
     (0, _react.useEffect)(()=>{
         window.scrollTo({
             top: 0,
@@ -45488,7 +45486,7 @@ $RefreshReg$(_c, "PaymentSuccess");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../scss/pages/payment.scss":"dj1UJ","25009bf8738b8eae":"3ve8j","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"dj1UJ":[function() {},{}],"3ve8j":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","../scss/pages/payment.scss":"dj1UJ","react-router-dom":"9xmpe","25009bf8738b8eae":"3ve8j","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dj1UJ":[function() {},{}],"3ve8j":[function(require,module,exports,__globalThis) {
 module.exports = require("8bca0f786e23a61").getBundleURL('kFIdX') + "payment-success.bdd50cae.svg" + "?" + Date.now();
 
 },{"8bca0f786e23a61":"lgJ39"}],"ii8NJ":[function(require,module,exports,__globalThis) {
@@ -45568,7 +45566,7 @@ $RefreshReg$(_c, "PaymentFailed");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../scss/pages/payment.scss":"dj1UJ","c28c4cf6d391d516":"5XPyZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"dj1UJ":[function() {},{}],"5XPyZ":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","../scss/pages/payment.scss":"dj1UJ","react-router-dom":"9xmpe","c28c4cf6d391d516":"5XPyZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dj1UJ":[function() {},{}],"5XPyZ":[function(require,module,exports,__globalThis) {
 module.exports = require("f1905c2721fac9f7").getBundleURL('kFIdX') + "payment-failed.2c09e0df.svg" + "?" + Date.now();
 
 },{"f1905c2721fac9f7":"lgJ39"}],"c7aKt":[function(require,module,exports,__globalThis) {

@@ -1,4 +1,0 @@
-# ignore server code when deploying client
-server/
-*.log
-node_modules/

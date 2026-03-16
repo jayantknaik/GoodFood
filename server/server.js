@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const path = require("path");
 require('dotenv').config();
 
 if (!process.env.STRIPE_SECRET_KEY) {
@@ -18,12 +17,6 @@ const IMG_URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_
 
 app.use(cors());
 app.use(express.json());
-
-// app.use(express.static(path.join(__dirname, "../client/dist")));
-
-// app.get("/*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "../client/dist/index.html"));
-// })
 
 app.post("/create-checkout-session", async (req, res) => {
     try {
@@ -59,11 +52,6 @@ app.post("/create-checkout-session", async (req, res) => {
 app.get('/test', (req, res) => {
     res.json({ message: 'GoodFood server is working!' });
 });
-
-if (!process.env.STRIPE_SECRET_KEY) {
-    console.error('STRIPE_SECRET_KEY is not set');
-    process.exit(1);
-}
 
 app.listen(port, () => {
     console.log(`🚀 Server running on port: ${port}`);
