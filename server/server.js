@@ -56,6 +56,10 @@ app.post("/create-checkout-session", async (req, res) => {
     }
 });
 
+app.get('/test', (req, res) => {
+    res.json({ message: 'GoodFood server is working!' });
+});
+
 if (!process.env.STRIPE_SECRET_KEY) {
     console.error('STRIPE_SECRET_KEY is not set');
     process.exit(1);
