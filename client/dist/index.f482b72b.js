@@ -35185,6 +35185,7 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
 var _restaurantCard = require("../components/restaurant/RestaurantCard");
 var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
@@ -35201,9 +35202,12 @@ const Home = ()=>{
     _s();
     const resList = (0, _reactRouterDom.useOutletContext)();
     const VegRestaurantCard = (0, _restaurantCard.isVeg)((0, _restaurantCardDefault.default));
+    (0, _react.useEffect)(()=>{
+        fetch("https://your-backend.onrender.com/ping").then(()=>console.log("Server awake")).catch(()=>console.log("Server still waking"));
+    }, []);
     return resList.length === undefined ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/pages/Home.jsx",
-        lineNumber: 14,
+        lineNumber: 21,
         columnNumber: 43
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -35214,7 +35218,7 @@ const Home = ()=>{
                         resList: resList
                     }, void 0, false, {
                         fileName: "src/pages/Home.jsx",
-                        lineNumber: 19,
+                        lineNumber: 26,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35224,12 +35228,12 @@ const Home = ()=>{
                             children: "Order Food At Your Doorstep Now!"
                         }, void 0, false, {
                             fileName: "src/pages/Home.jsx",
-                            lineNumber: 22,
+                            lineNumber: 29,
                             columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/pages/Home.jsx",
-                        lineNumber: 21,
+                        lineNumber: 28,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35237,7 +35241,7 @@ const Home = ()=>{
                         children: "Top restaurant chains in Bangalore"
                     }, void 0, false, {
                         fileName: "src/pages/Home.jsx",
-                        lineNumber: 24,
+                        lineNumber: 31,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35248,36 +35252,36 @@ const Home = ()=>{
                                 resData: res
                             }, res.info.id, false, {
                                 fileName: "src/pages/Home.jsx",
-                                lineNumber: 29,
+                                lineNumber: 36,
                                 columnNumber: 57
                             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
                                 resData: res
                             }, res.info.id, false, {
                                 fileName: "src/pages/Home.jsx",
-                                lineNumber: 29,
+                                lineNumber: 36,
                                 columnNumber: 113
                             }, undefined);
                         })
                     }, void 0, false, {
                         fileName: "src/pages/Home.jsx",
-                        lineNumber: 25,
+                        lineNumber: 32,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/Home.jsx",
-                lineNumber: 16,
+                lineNumber: 23,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                 fileName: "src/pages/Home.jsx",
-                lineNumber: 35,
+                lineNumber: 42,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(Home, "CpX38wapETvIvPEf18EFnDnNpLU=", false, function() {
+_s(Home, "tcHhvgUw3AbHFwZyvOKK5ZrNyfY=", false, function() {
     return [
         (0, _reactRouterDom.useOutletContext)
     ];
@@ -35292,7 +35296,7 @@ $RefreshReg$(_c, "Home");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../components/restaurant/RestaurantCard":"31655","../components/Shimmer":"imnNo","../scss/pages/home.scss":"fKBd6","../components/Footer":"2OVeV","../utils/hooks/isMobile":"5JSGa","../components/Search":"1TO9L","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"31655":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../components/restaurant/RestaurantCard":"31655","../components/Shimmer":"imnNo","../scss/pages/home.scss":"fKBd6","../components/Footer":"2OVeV","../utils/hooks/isMobile":"5JSGa","../components/Search":"1TO9L","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"31655":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$b50a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40098,7 +40102,7 @@ const Cart = ()=>{
     const cartItems = (0, _reactRedux.useSelector)((state)=>state.cart.items);
     const dispatch = (0, _reactRedux.useDispatch)();
     const [subTotal, setSubTotal] = (0, _react.useState)(0);
-    const API_URL = "http://localhost:3000";
+    const API_URL = "https://goodfoodserver-tecq.onrender.com";
     console.log("NODE_ENV: ", "development");
     console.log("API_URL: ", API_URL);
     (0, _react.useEffect)(()=>{
