@@ -49,6 +49,10 @@ app.post("/create-checkout-session", async (req, res) => {
     }
 });
 
+app.get("/ping", (req, res) => {
+    res.status(200).send("Server is awake");
+});
+
 app.get('/test', (req, res) => {
     res.json({ message: 'GoodFood server is working!' });
 });

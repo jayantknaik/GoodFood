@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import RestaurantCard, {isVeg} from '../components/restaurant/RestaurantCard';
+import RestaurantCard, { isVeg } from '../components/restaurant/RestaurantCard';
 import Shimmer from '../components/Shimmer';
 import '../scss/pages/home.scss';
 import Footer from '../components/Footer';
@@ -7,11 +8,17 @@ import { isMobile } from '../utils/hooks/isMobile';
 import Search from '../components/Search';
 
 const Home = () => {
-    
+
     const resList = useOutletContext();
     const VegRestaurantCard = isVeg(RestaurantCard);
 
-    return resList.length === undefined ? <Shimmer/> : (
+    useEffect(() => {
+        fetch("https://your-backend.onrender.com/ping")
+            .then(() => console.log("Server awake"))
+            .catch(() => console.log("Server still waking"));
+    }, []);
+
+    return resList.length === undefined ? <Shimmer /> : (
         <>
             <div className="home">
                 {
@@ -26,7 +33,7 @@ const Home = () => {
                     {
                         resList.map((res) => {
                             return (
-                                res.info.veg === true ? <VegRestaurantCard resData={res} key={res.info.id} /> : <RestaurantCard resData={res} key={res.info.id} /> 
+                                res.info.veg === true ? <VegRestaurantCard resData={res} key={res.info.id} /> : <RestaurantCard resData={res} key={res.info.id} />
                             )
                         })
                     }
