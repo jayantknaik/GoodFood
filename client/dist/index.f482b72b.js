@@ -35203,7 +35203,7 @@ const Home = ()=>{
     const resList = (0, _reactRouterDom.useOutletContext)();
     const VegRestaurantCard = (0, _restaurantCard.isVeg)((0, _restaurantCardDefault.default));
     (0, _react.useEffect)(()=>{
-        fetch("https://your-backend.onrender.com/ping").then(()=>console.log("Server awake")).catch(()=>console.log("Server still waking"));
+        fetch("https://goodfoodserver-tecq.onrender.com/ping").then(()=>console.log("Server awake")).catch(()=>console.log("Server still waking"));
     }, []);
     return resList.length === undefined ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/pages/Home.jsx",

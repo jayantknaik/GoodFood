@@ -13,7 +13,7 @@ const Home = () => {
     const VegRestaurantCard = isVeg(RestaurantCard);
 
     useEffect(() => {
-        fetch("https://your-backend.onrender.com/ping")
+        fetch("https://goodfoodserver-tecq.onrender.com/ping")
             .then(() => console.log("Server awake"))
             .catch(() => console.log("Server still waking"));
     }, []);
