@@ -18,6 +18,13 @@ const IMG_URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_
 app.use(cors());
 app.use(express.json());
 
+const path = require("path");
+app.use(express.static(path.join(__dirname, "../client/dist"))); // or build output path
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+});
+
 app.post("/create-checkout-session", async (req, res) => {
     try {
         const cartItems = req.body;
