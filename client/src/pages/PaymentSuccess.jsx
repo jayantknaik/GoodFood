@@ -10,7 +10,7 @@ const PaymentSuccess = () => {
             </div>
             <div className="payment__title payment__title--success">Payment Success</div>
             <div className="payment__message">Your payment was successful.</div>
-            <Link to={'/'} className="payment__cta">Get Food</Link>
+            <Link to={'/'} className="payment__cta">Still Hungry? Get More Food!</Link>
         </div>
     )
 }

@@ -10,7 +10,7 @@ const PaymentFailed = () => {
             </div>
             <div className="payment__title payment__title--fail">Payment Failed</div>
             <div className="payment__message">Your payment was unsuccessful. Please try again.</div>
-            <Link to={'/'} className="payment__cta">Get Food</Link>
+            <Link to={'/'} className="payment__cta">Oops! Try Again</Link>
         </div>
     )
 }

@@ -45468,7 +45468,7 @@ const PaymentSuccess = ()=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                 to: '/',
                 className: "payment__cta",
-                children: "Get Food"
+                children: "Still Hungry? Get More Food!"
             }, void 0, false, {
                 fileName: "src/pages/PaymentSuccess.jsx",
                 lineNumber: 13,
@@ -45548,7 +45548,7 @@ const PaymentFailed = ()=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                 to: '/',
                 className: "payment__cta",
-                children: "Get Food"
+                children: "Oops! Try Again"
             }, void 0, false, {
                 fileName: "src/pages/PaymentFailed.jsx",
                 lineNumber: 13,
