@@ -21,7 +21,7 @@ app.use(express.json());
 app.post("/create-checkout-session", async (req, res) => {
     try {
         const cartItems = req.body;
-        const origin = "https://goodfood-a8wn.onrender.com/";
+        const origin = "https://goodfood-a8wn.onrender.com";
 
         const session = await stripe.checkout.sessions.create({
             mode: "payment",
