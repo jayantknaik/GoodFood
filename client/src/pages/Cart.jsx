@@ -1,9 +1,9 @@
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CartItem from "../components/cart/CartItem";
 import Empty from "../components/cart/Empty";
 import '../scss/pages/cart.scss';
 import { clearCart } from "../utils/redux/cartSlice";
-import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Cart = () => {
@@ -12,9 +12,7 @@ const Cart = () => {
     const dispatch = useDispatch();
     const [subTotal, setSubTotal] = useState(0);
     const API_URL = "https://goodfoodserver-tecq.onrender.com";
-
-    console.log("NODE_ENV: ", process.env.NODE_ENV);
-    console.log("API_URL: ", API_URL);
+    const [isServerLoading, setIsServerLoading] = useState(false);
 
     useEffect(() => {
 
@@ -41,18 +39,51 @@ const Cart = () => {
     }
 
     const makePayment = async () => {
-
         try {
-            const response = await axios.post(`${API_URL}/create-checkout-session`, cartItems);
-            if (response && response.status === 200) {
-                window.open(`${response.data.url}`, "_blank");
+            const isAwake = await waitForServer();
+
+            if (!isAwake) {
+                alert("Server is taking too long. Please try again.");
+                return;
             }
-        }
-        catch (error) {
+
+            const response = await axios.post(`${API_URL}/create-checkout-session`, cartItems);
+
+            if (response && response.status === 200) {
+                window.location.href = response.data.url; // better than window.open
+            }
+
+        } catch (error) {
             console.error("Payment Error:", error);
         }
+    };
 
-    }
+    const waitForServer = async () => {
+        setIsServerLoading(true);
+
+        const maxRetries = 10;
+        let attempts = 0;
+
+        while (attempts < maxRetries) {
+            try {
+                const res = await axios.get(`${API_URL}/ping`);
+
+                if (res.status === 200) {
+                    console.log("✅ Server is awake");
+                    setIsServerLoading(false);
+                    return true;
+                }
+            } catch (err) {
+                console.log(`⏳ محاولة ${attempts + 1} - Server still sleeping...`);
+            }
+
+            attempts++;
+            await new Promise(resolve => setTimeout(resolve, 2000)); // wait 2s
+        }
+
+        setIsServerLoading(false);
+        return false;
+    };
 
     // console.log(cartItems);
 
@@ -111,6 +142,16 @@ const Cart = () => {
                                 <div className="cart__rt__cta" onClick={() => makePayment()}>Checkout Now</div>
                             </div>
                         </div>
+                        {
+                            isServerLoading && (
+                                <div className="server-loader">
+                                    <div className="server-loader__content">
+                                        <div className="spinner"></div>
+                                        <p>Waking up server... Please wait ⏳</p>
+                                    </div>
+                                </div>
+                            )
+                        }
                     </div>
             }
         </>
